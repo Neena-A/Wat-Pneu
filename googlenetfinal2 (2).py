@@ -98,8 +98,8 @@ def Train_CNN_Model(model):
    
     # prepare iterators
     batch_size=32
-    train_it = train_datagen.flow_from_directory('/content/chest_xray/train',batch_size=batch_size, target_size=(299, 299))
-    valid_it = valid_datagen.flow_from_directory('/content/chest_xray/test',batch_size=batch_size, target_size=(299, 299))
+    train_it = train_datagen.flow_from_directory('/chest_xray/train',batch_size=batch_size, target_size=(299, 299))
+    valid_it = valid_datagen.flow_from_directory('/chest_xray/test',batch_size=batch_size, target_size=(299, 299))
 
 
     epochs=10;
@@ -144,7 +144,7 @@ def Evaluate_CNN_Model():
                                      featurewise_center= True,
                                      featurewise_std_normalization = True)
     
-    test_it = test_datagen.flow_from_directory('/content/chest_xray/test',#classes =('normal','abnormal'), 
+    test_it = test_datagen.flow_from_directory('/chest_xray/test',#classes =('normal','abnormal'), 
                                                shuffle=False,batch_size=batch_size, target_size=(299, 299))
     
     y_true = test_it.classes;
@@ -215,7 +215,7 @@ model = Build_CNN_Model()
 
 Train_CNN_Model(model)
 
-img = plt.imread('/content/chest_xray/val/PNEUMONIA/person1954_bacteria_4886.jpeg')
+img = plt.imread('/chest_xray/val/PNEUMONIA/person1954_bacteria_4886.jpeg')
 img = cv2.resize(img, (299, 299))
 img = np.dstack([img, img, img])
 img = img.astype('float32') / 255
