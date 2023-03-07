@@ -7,15 +7,15 @@ Original file is located at
     https://colab.research.google.com/drive/1BUu_gOrUI1CMXYCHonmPkcP4kdRYipNW
 """
 
-from google.colab import files
-files.upload()
+# from google.colab import files
+# files.upload()
 
-!pip install -q kaggle
-!mkdir -p ~/.kaggle
-!cp kaggle.json ~/.kaggle/
-!kaggle datasets download -d alifrahman/chestxraydataset
+# !pip install -q kaggle
+# !mkdir -p ~/.kaggle
+# !cp kaggle.json ~/.kaggle/
+# !kaggle datasets download -d alifrahman/chestxraydataset
 
-!unzip /content/chestxraydataset.zip
+# !unzip /content/chestxraydataset.zip
 
 from keras.models import Sequential,load_model
 from keras.layers import Conv2D,Activation, MaxPooling2D,Dense,Flatten
