@@ -105,7 +105,7 @@ def Train_CNN_Model(model):
     epochs=10;
     
     history = model.fit(train_it, steps_per_epoch=len(train_it),
-		validation_data=valid_it, validation_steps=len(valid_it), epochs=epochs, verbose=0)
+		validation_data=valid_it, validation_steps=len(valid_it), epochs=epochs, verbose=1)
     
     
     #  "Accuracy"
