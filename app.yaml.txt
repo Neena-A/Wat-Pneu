@@ -1,0 +1,5 @@
+runtime: python39
+manual_scaling:
+  instances: 4
+instance_class: B4
+entrypoint: gunicorn -w 4 -k uvicorn.workers.UvicornWorker main:app
